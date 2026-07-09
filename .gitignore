@@ -1,0 +1,5 @@
+.env
+.env.local
+.venv
+.zed
+__pycache__
