@@ -2,3 +2,12 @@ fastapi[standard]
 python-dotenv
 psycopg[binary]
 psycopg[pool]
+pwdlib[argon2]
+pyjwt
+httpx
+uvicorn[standard]>=0.34.0
+auth0-fastapi-api>=1.0.0b5
+
+#optional - uncomment to use
+# OIDC Utilities
+#google-auth-oauthlib

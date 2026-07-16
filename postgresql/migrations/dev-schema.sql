@@ -24,8 +24,13 @@ CREATE TABLE IF NOT EXISTS dev.users (
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     user_name TEXT NOT NULL UNIQUE,
     hashed_password TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    oauth_provider TEXT,
+    oauth_id TEXT,
     role_id INTEGER NOT NULL REFERENCES public.roles(id)
 );
+
 
 REVOKE ALL ON SCHEMA dev FROM PUBLIC;
 REVOKE ALL ON SCHEMA public FROM PUBLIC;

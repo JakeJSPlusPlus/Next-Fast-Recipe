@@ -1,5 +1,5 @@
 {
   "venvPath": ".",
   "venv": ".venv",
-  "include": ["."],
+  "include": [".", "C:\\Code\\BuildRecipies\\Next-Fast-Recipe\\fast-api-app\\.venv\\Lib\\site-packages\\fastapi_plugin"],
 }

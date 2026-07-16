@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { PT_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
-import { HeaderLink } from "./components/HeaderLink";
+import { HeaderLink } from "@/components/HeaderLink";
+import { Auth0Provider } from "@auth0/nextjs-auth0/client";
 
 
 const links = [
@@ -46,7 +47,12 @@ export default function RootLayout({
           ))}
           </header>
         </div>
-        <div className="flex-1 min-h-full flex w-full flex-col justify-center">{children}</div>
+        <div className="flex-1 min-h-full flex w-full flex-col justify-center">
+          {/* Uncomment below if using auth0 */}
+          {/*<Auth0Provider> */}
+            {children}
+          {/*</Auth0Provider>*/}
+        </div>
       </body>
     </html>
   );
