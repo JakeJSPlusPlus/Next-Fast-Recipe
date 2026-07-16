@@ -5,8 +5,8 @@ services:
       restart: unless-stopped
       command: tunnel --no-autoupdate run --token "${CLOUDFLARE_TUNNEL_TOKEN}"
       depends_on:
-        - backend
-        - frontend
+        - fastapi
+        - next-app
       networks:
         - tunnel-network
 
@@ -24,7 +24,7 @@ services:
       - tunnel-network
       - backend-network
 
-  nextjs:
+  next-app:
     build:
       context: .
       dockerfile: next-app/Dockerfile
@@ -34,7 +34,7 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - backend
+      - fastapi
     networks:
       - backend-network
       - frontend-network

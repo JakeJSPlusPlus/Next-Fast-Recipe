@@ -1,6 +1,6 @@
 FROM python:3.13-slim
 
-WORKDIR fast-api-app
+WORKDIR /fast-api-app
 
 COPY fast-api-app/requirements.txt .
 
